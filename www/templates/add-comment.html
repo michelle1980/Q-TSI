@@ -1,0 +1,19 @@
+<!--Q-TSI - App
+    MODAL TO ADD A COMMENT 
+<!--Tabs Navigation hidden -->
+<ion-modal-view>
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">{{'modal.observation.Title' | translate}}</h1>
+        <button class="button" ng-click="closeModal()">{{'modal.observation.Button.Cancel' | translate}}</button>
+    </ion-header-bar>
+    <ion-content>
+        <form ng-submit="saveComment(data)">
+            <label class="item item-input text">
+                <textarea placeholder="{{'modal.observation.Placeholder.AddComment' | translate}}" rows="10" ng-model="data.comment" name="comment"></textarea>
+            </label>
+            <button class="button button-full button-positive">
+                {{'modal.observation.Button.Add' | translate}}
+            </button>
+        </form>
+    </ion-content>
+</ion-modal-view>

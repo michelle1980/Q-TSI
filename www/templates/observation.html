@@ -1,0 +1,416 @@
+<!--Q-TSI - App
+OBSERVATION VIEW 
+<!--Tabs Navigation hidden -->
+<ion-view view-title="{{'view.observation.Title' | translate}}" hide-tabs="true" cache-view="false">
+    <ion-content scroll="false">
+        <section class="observation-container">
+            <div class="top">
+                <div class="row" style="height: 20%;">
+                    <div class="col col-offset-33">
+                    </div>
+                    <div class="col col-33">
+                        <h4>{{'view.observation.Header.Technologies' | translate}}</h4>
+                    </div>
+                    <div class="col col-33">
+                        <h4>{{'view.observation.Header.TeacherLocation' | translate}}</h4>
+                    </div>
+                </div>
+                <div class="row" style="height: 80%;">
+                    <div class="col col-33" style="height: 100%;">
+                        <div class="row" style="height: 33%;">
+                            <div class="list padding" style="width: 80%;">
+                                <label class="item item-input item-select">
+                                    <div class="input-label" id="interaction">
+                                        {{'view.observation.Label.LearningConfiguration' | translate}}
+                                    </div>
+                                    <select ng-model="data.learningConfiguration" ng-change="addDataMeta(data)" style="padding: 0px;">
+                                        <option></option>
+                                        <option>{{'view.observation.Label.LearningConfiguration.Option.ClassDiscussion' | translate}}</option>
+                                        <option>{{'view.observation.Label.LearningConfiguration.Option.GroupWork' | translate}}</option>
+                                        <option>{{'view.observation.Label.LearningConfiguration.Option.PairWork' | translate}}</option>
+                                        <option>{{'view.observation.Label.LearningConfiguration.Option.IndividualWork' | translate}}</option>
+                                        <option>{{'view.observation.Label.LearningConfiguration.Option.Arrangement' | translate}}</option>
+                                        <option>{{'view.observation.Label.LearningConfiguration.Option.Other' | translate}}</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 10px; margin-left: 10px; height: 33%;">
+                            <button class="button button-positive button-size" ng-click="openModal()" id="interaction">{{'view.observation.Button.AddComment' | translate}}</button>
+                        </div>
+                        <div class="row" style="margin-top: 10px; margin-left: 10px; ">
+                            <button class="button button-assertive button-size" ng-click="saveObservation()">
+                                {{'view.observation.Button.Save' | translate}}
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col col-33" style="height: 100%;">
+                        <div class="row" style="height: 20%;">
+                            <h5>{{'view.observation.Header.ByTeacher' | translate}}</h5>
+                        </div>
+                        <div class="row" style="height: 30%;">
+                            <div class="col col-20">
+                                <input ng-model="data.technologiesInUseTeacher" class="radio-custom-whiteboard" name="technologiesInUseTeacher" type="radio" value="whiteboard" ng-click="addDataMeta(data)">
+                            </div>
+                            <div class="col col-20">
+                                <input ng-model="data.technologiesInUseTeacher" class="radio-custom-projector" name="technologiesInUseTeacher" type="radio" value="projector" ng-click="addDataMeta(data)">
+                            </div>
+                            <div class="col col-20">
+                                <input ng-model="data.technologiesInUseTeacher" class="radio-custom-bookTeacher" name="technologiesInUseTeacher" type="radio" value="bookTeacher" ng-click="addDataMeta(data)">
+                            </div>
+                            <div class="col col-20">
+                                <input ng-model="data.technologiesInUseTeacher" class="radio-custom-smartboard" name="technologiesInUseTeacher" type="radio" value="smartboard" ng-click="addDataMeta(data)">
+                            </div>
+                            <div class="col col-20">
+                                <input ng-model="data.technologiesInUseTeacher" class="icon ion-close-round none" name="technologiesInUseTeacher" type="radio" value="noneTeacher" ng-click="addDataMeta(data)">
+                            </div>
+                        </div>
+                        <div class="row" style="height: 20%;">
+                            <h5>{{'view.observation.Header.ByStudents' | translate}}</h5>
+                        </div>
+                        <div class="row" style="height: 30%;">
+                            <div class="col col-20">
+                                <input ng-model="data.technologiesInUseStudents" class="icon ion-android-laptop customIcon" name="technologiesInUseStudents" type="radio" value="computer" ng-click="addDataMeta(data)">
+                            </div>
+                            <div class="col col-20">
+                                <input ng-model="data.technologiesInUseStudents" class="radio-custom-bookTeacher" name="technologiesInUseStudents" type="radio" value="bookStudent" ng-click="addDataMeta(data)">
+                            </div>
+                            <div class="col col-40">
+                                <input ng-model="data.technologiesInUseStudents" class="radio-custom-bookAndComputer" name="technologiesInUseStudents" type="radio" value="bookAndComputer" ng-click="addDataMeta(data)">
+                            </div>
+                            <div class="col col-20">
+                                <input ng-model="data.technologiesInUseStudents" class="icon ion-close-round none" name="technologiesInUseStudents" type="radio" value="noneStudent" ng-click="addDataMeta(data)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-33" style="height: 100%;" ng-controller="BoardPositionCtrl">
+                        <div class="row" style="height: 100%;">
+                            <div class="col align" ng-controller="BoardPositionCtrl" style="height: 100%;">
+                                <div id="location" style="padding-left: 0px; height: 100%;">
+                                    <div class="col right no-padding" ng-if="boardposition == 'top'" style="height: 10%;">
+                                        <button class="button button-light" id="testTopOB">
+                                        </button>
+                                    </div>
+                                    <div class="row" style="height: 110%;" >
+                                        <!--ng-if true -->
+                                        <div class="col no-padding" ng-if="boardposition == 'left'" style="height: 100%;">
+                                            <label class="item item-radio board" style="height: 25%;">
+                                                <div>
+                                                    
+                                                </div>
+                                            </label>
+                                            <label class="item item-radio board" style="height: 25%;">
+                                                <div>
+                                                    
+                                                </div>
+                                            </label>
+                                            <label class="item item-radio board" style="height: 25%;">
+                                                <div>
+                                                    
+                                                </div>
+                                            </label>
+                                            <label class="item item-radio board" style="height: 25%;">
+                                                <div>
+                                                    
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <!--ng-if true -->
+                                        <div class="col no-padding" style="height: 100%;">
+                                            <label class="item item-radio" ng-repeat="position in positions_1" for={{position}} id="{{position}}" style="height: 25%;">
+                                                <input type="radio" name="locationTeacher" ng-model="data.locationTeacher" value="{{position}}" ng-click="addDataMeta(data)">
+                                                <div class="item-observation">
+                                                    {{position}}
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col no-padding" style="height: 100%;">
+                                            <label class="item item-radio" ng-repeat="position in positions_2" for={{position}} id="{{position}}" style="height: 25%;">
+                                                <input type="radio" name="locationTeacher" ng-model="data.locationTeacher" value="{{position}}" ng-click="addDataMeta(data)">
+                                                <div class="item-observation">
+                                                    {{position}}
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col no-padding" style="height: 100%;">
+                                            <label class="item item-radio" ng-repeat="position in positions_3" for={{position}} id="{{position}}" style="height: 25%;">
+                                                <input type="radio" name="locationTeacher" ng-model="data.locationTeacher" value="{{position}}" ng-click="addDataMeta(data)">
+                                                <div class="item-observation">
+                                                    {{position}}
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="col no-padding" style="height: 100%;">
+                                            <label class="item item-radio" ng-repeat="position in positions_4" for={{position}} id="{{position}}" style="height: 25%;">
+                                                <input type="radio" name="locationTeacher" ng-model="data.locationTeacher" value="{{position}}" ng-click="addDataMeta(data)">
+                                                <div class="item-observation">
+                                                    {{position}}
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <!--ng-if true -->
+                                        <div class="col right no-padding" ng-if="boardposition == 'right'" style="height: 100%;">
+                                            <label class="item item-radio board" style="height: 25%;">
+                                                <div>
+
+                                                </div>
+                                            </label>
+                                            <label class="item item-radio board" style="height: 25%;">
+                                                <div>
+
+                                                </div>
+                                            </label>
+                                            <label class="item item-radio board" style="height: 25%;">
+                                                <div>
+
+                                                </div>
+                                            </label>
+                                            <label class="item item-radio board" style="height: 25%;">
+                                                <div>
+
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <!--ng-if true -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="row interaction-container align">
+                    <div class="col col-40 interaction-container" style="background-color: #DBDED0">
+                        <div class="interaction-headers">
+                            <h4>{{'view.observation.Header.PublicContentRelated' | translate}}</h4>
+                            <div class="row">
+                                <div class="col col-50">
+                                    <h5 class="green">{{'view.observation.Header.ResponseOpportunity' | translate}}</h5>
+                                </div>
+                                <div class="col col-50">
+                                    <h5 class="red">{{'view.observation.Header.Comment' | translate}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interaction-buttons">
+                            <div class="firstRow">
+                                <div class="row" id="interactionButtonRow">
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Direct" ng-change="addDataInteraction(data)">
+                                            <div id="Direct" class="radioBig green" style="white-space:normal;">
+                                                {{'view.observation.Label.ResponseOpportunity.Direct' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Volunteer" ng-change="addDataInteraction(data)">
+                                            <div id="Volunteer" class="radioBig green" style="white-space:normal;">
+                                                {{'view.observation.Label.ResponseOpportunity.Volunteer' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Teacher-to-Single-Comment" ng-change="addDataInteraction(data)">
+                                            <div id="Teacher-to-Single-Comment" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.TeacherToSingle' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Student-Single-Comment" ng-change="addDataInteraction(data)">
+                                            <div id="Student-Single-Comment" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.StudentSingle' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="secondRow">
+                                <div class="row" id="interactionButtonRow">
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Call-Out-Single" ng-change="addDataInteraction(data)">
+                                            <div id="Call-Out-Single" class="radioBig green" style="white-space:normal;">
+                                                {{'view.observation.Label.ResponseOpportunity.CallOutSingle' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Call-Out-Multiple" ng-change="addDataInteraction(data)">
+                                            <div id="Call-Out-Multiple" class="radioBig green" style="white-space:normal;">
+                                                {{'view.observation.Label.ResponseOpportunity.CallOutMultiple' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Teacher-to-Multiple-Comment" ng-change="addDataInteraction(data)">
+                                            <div id="Teacher-to-Multiple-Comment" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.TeacherToMultiple' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Student-Multiple-Comment" ng-change="addDataInteraction(data)">
+                                            <div id="Student-Multiple-Comment" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.StudentMultiple' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-40 interaction-container" style="background-color: #E1ECF2">
+                        <div class="interaction-headers">
+                            <h4>{{'view.observation.Header.PublicNonContentRelated' | translate}}<br /></h4>
+                            <div class="row">
+                                <div class="col col-25">
+                                    <h5 class="green">{{'view.observation.Header.Discipline' | translate}}</h5>
+                                </div>
+                                <div class="col col-25">
+                                    <h5 class="red">{{'view.observation.Header.Appraisal' | translate}}</h5>
+                                </div>
+                                <div class="col col-30">
+                                    <h5 class="green">{{'view.observation.Header.Procedural' | translate}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interaction-buttons">
+                            <div class="firstRow">
+                                <div class="row" id="interactionButtonRow">
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Single-Discipline" ng-change="addDataInteraction(data)">
+                                            <div id="Single-Discipline" class="radioBig green">
+                                                {{'view.observation.Label.Single' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Single-Appraisal" ng-change="addDataInteraction(data)">
+                                            <div id="Single-Appraisal" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.Single' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Teacher-to-Single-Procedural" ng-change="addDataInteraction(data)">
+                                            <div id="Teacher-to-Single-Procedural" class="radioBig green" style="white-space:normal;">
+                                                {{'view.observation.Label.TeacherToSingle' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Student-Single-Procedural" ng-change="addDataInteraction(data)">
+                                            <div id="Student-Single-Procedural" class="radioBig green" style="white-space:normal;">
+                                                {{'view.observation.Label.StudentSingle' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="secondRow">
+                                <div class="row" id="interactionButtonRow">
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Multiple-Discipline" ng-change="addDataInteraction(data)">
+                                            <div id="Multiple-Discipline" class="radioBig green">
+                                                {{'view.observation.Label.Multiple' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Multiple-Appraisal" ng-change="addDataInteraction(data)">
+                                            <div id="Multiple-Appraisal" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.Multiple' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Teacher-to-Multiple-Procedural" ng-change="addDataInteraction(data)">
+                                            <div id="Teacher-to-Multiple-Procedural" class="radioBig green" style="white-space:normal;">
+                                                {{'view.observation.Label.TeacherToMultiple' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-25" id="interactionButton">
+                                        <label class="item item-radio greenTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Student-Multiple-Procedural" ng-change="addDataInteraction(data)">
+                                            <div id="Student-Multiple-Procedural" class="radioBig green" style="white-space:normal;">
+                                                {{'view.observation.Label.StudentMultiple' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-20 interaction-container" style="background-color: #DBDED0">
+                        <div class="interaction-headers">
+                            <h4>{{'view.observation.Header.NonPublic' | translate}}</h4>
+                            <div class="row">
+                                <div class="col">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="interaction-buttons">
+                            <div class="firstRow">
+                                <div class="row" id="interactionButtonRow">
+                                    <div class="col col-50" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Teacher-to-Single-Non-Public" ng-change="addDataInteraction(data)">
+                                            <div id="Teacher-to-Single-Non-Public" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.TeacherToSingle' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-50" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Student-to-Teacher-Non-Public" ng-change="addDataInteraction(data)" style="white-space:normal;">
+                                            <div id="Student-to-Teacher-Non-Public" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.StudentToTeacher' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="secondRow">
+                                <div class="row" id="interactionButtonRow">
+                                    <div class="col col-50" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Teacher-to-Multiple-Non-Public" ng-change="addDataInteraction(data)" style="white-space:normal;">
+                                            <div id="Teacher-to-Multiple-Non-Public" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.TeacherToMultiple' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                    <div class="col col-50" id="interactionButton">
+                                        <label class="item item-radio redTable">
+                                            <input type="radio" name="interaction" ng-model="data.interactions" value="Students-to-Teacher-Non-Public" ng-change="addDataInteraction(data)">
+                                            <div id="Students-to-Teacher-Non-Public" class="radioBig red" style="white-space:normal;">
+                                                {{'view.observation.Label.StudentsToTeacher' | translate}}
+                                            </div>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </ion-content>
+</ion-view>

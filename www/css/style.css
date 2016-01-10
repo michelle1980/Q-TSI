@@ -1,0 +1,312 @@
+.greenTable {
+    display: table;
+    width: 100%;
+    color: #08AE9E;
+    border-color: #08AE9E;
+}
+
+.redTable {
+    display: table;
+    width: 100%;
+    color: #EF373A;
+    border-color: #EF373A;
+}
+
+.radioBig {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+
+.green {
+    color: #08AE9E;
+}
+
+.red {
+    color: #EF373A;
+}
+
+.radio-custom-whiteboard {
+    content: url('../img/whiteboardGrey.png');
+    width: 48px;
+}
+
+.radio-custom-whiteboard:checked {
+    content: url('../img/whiteboardGreen.png');
+    width: 48px;
+}
+
+.radio-custom-projector {
+    content: url('../img/projectorGrey.png');
+    width: 48px;
+}
+
+.radio-custom-projector:checked {
+    content: url('../img/projectorGreen.png');
+    width: 48px;
+}
+
+.radio-custom-bookTeacher {
+    content: url('../img/bookGrey.png');
+    width: 48px;
+}
+
+.radio-custom-bookTeacher:checked {
+    content: url('../img/bookGreen.png');
+    width: 48px;
+}
+
+.button-size {
+    width: 60%;
+}
+
+.radio-custom-smartboard {
+    content: url('../img/smartboardGrey.png');
+    width: 48px;
+}
+
+.radio-custom-smartboard:checked {
+    content: url('../img/smartboardGreen.png');
+    width: 48px;
+}
+
+.radio-custom-bookAndComputer {
+    content: url('../img/bookAndLaptopGrey.png');
+    width: 130px;
+}
+
+.radio-custom-bookAndComputer:checked {
+    content: url('../img/abc.png');
+    width: 130px;
+}
+
+.none {
+    color: #444;
+    font-size: 35px;
+}
+
+.none:checked {
+    color: #08AE9E;
+    font-size: 35px;
+}
+
+.customIcon {
+    color: #444;
+    font-size: 45px;
+}
+
+.customIcon:checked {
+    color: #08AE9E;
+    font-size: 45px;
+}
+
+.observation-container {
+    height: 100%;
+}
+
+.item-radio input:checked ~ .item-content {
+    background: #08AE9E;
+    color: white;
+}
+
+.top {
+    height: 40%;
+}
+
+.bottom {
+    height: 60%;
+}
+
+.interaction-container {
+    height: 100%;
+}
+
+.interaction-headers {
+    height: 20%;
+}
+
+.interaction-buttons {
+    height: 80%;
+}
+
+.firstRow {
+    height: 50%;
+}
+
+.secondRow {
+    height: 50%;
+    ;
+}
+
+#interactionButtonRow {
+    height: 100%;
+}
+
+#interactionButton {
+    height: 100%;
+}
+
+#interactionButtonLabel {
+    height: 80%;
+}
+
+#interaction {
+    padding-left: 5px;
+    padding-right: 5px;
+
+}
+
+#interactionNew {
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.no-padding {
+    padding: 0px;
+}
+
+.activated {
+    color: #08AE9E;
+}
+
+.no-width {
+    width: 0px;
+}
+
+#uniqueIdentifier {
+    color: red;
+}
+
+input {
+    -webkit-appearance: textfield;
+}
+
+.align {
+    text-align: center;
+}
+
+.valign {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15pt;
+    font-family: Roboto-Light, Arial;
+    color: #808080;
+}
+
+.valignTwo {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#locationHeader {
+    margin-top: 50px;
+}
+
+#board {
+    color: #08AE9E;
+    background-color: #08AE9E;
+}
+
+#aside {
+    height: 220px;
+    background-color: #EF373A;
+    color: white;
+}
+
+#top {
+    width: 100%;
+    background-color: #EF373A;
+    color: white;
+}
+
+.board {
+    color: #EF373A;
+    background-color: #EF373A;
+    border-color: #EF373A;
+}
+
+#testTopOB {
+    width: 100%;
+    background-color: #EF373A;
+    color: white;
+}
+
+
+
+
+
+
+.item-radio .item-content {
+    display: table;
+    width: 100%;
+}
+
+.item-complex .item-content,
+.item-radio .item-content {
+    position: relative;
+    z-index: 2;
+    padding: 16px 0px 16px 0px;
+    border: none;
+    background-color: #fff;
+    height: 100%;
+}
+
+
+
+
+.item-radio {
+    padding: 0;
+    height: 100%;
+}
+
+.item-observation {
+    position: relative;
+    z-index: 2;
+    padding: 16px 0px 16px 0px;
+    border: none;
+    background-color: #fff;
+}
+
+.item-radio input:checked ~ .item-observation {
+    color: white;
+    background: #08AE9E;
+    height: 100%;
+}
+
+.extra-margin {
+    margin-top: 50px;
+}
+
+.extra-padding {
+    padding-top: 20px;
+}
+
+.row-border {
+    border-bottom: solid grey;
+    border-width: 1px;
+}
+
+.modal-fullscreen {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+}
+
+.popup-head {
+    background: #08AE9E;
+}
+
+.popup-title {
+    color: white;
+}
+
+#saveMargin {
+    margin-top: 60px;
+}

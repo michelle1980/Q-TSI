@@ -1,0 +1,30 @@
+<ion-view view-title="{{'view.settings.Title' | translate}}" cache-view="false">
+    <ion-content>
+        <ion-list>
+            <div class="item item-divider">
+                {{'view.settings.ObserverName.Divider' | translate}}
+            </div>
+            <label class="item item-input item-floating-label">
+                <span class="input-label">{{'view.settings.ObserverName.Label' | translate}}</span>
+                <input type="text" placeholder="{{'view.settings.ObserverName.Placeholder' | translate}}" ng-model="data.observerName">
+            </label>
+            <div class="item item-divider">
+                {{'view.settings.LanguageSettings.Divider' | translate}}
+            </div>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    {{'view.settings.LanguageSettings.Label' | translate}}
+                </div>
+                <select ng-model="data.language" ng-change="setLanguage(data)">
+                    <option value="en_US">{{'view.settings.LanguageOptions.English' | translate}}</option>
+                    <option value="de_DE">{{'view.settings.LanguageOptions.German' | translate}}</option>
+                </select>
+            </label>
+
+        </ion-list>
+        <div class="padding">
+            <button ng-click="saveSettings(data)" class="button button-block button-positive">{{'view.settings.SaveSettings.Button' | translate}}</button>
+        </div>
+    </ion-content>
+</ion-view>

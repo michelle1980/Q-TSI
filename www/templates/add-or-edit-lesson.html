@@ -1,0 +1,114 @@
+<!--Q-TSI - App
+    MODAL TO ADD OR EDDIT LESSONS 
+<!--Tabs Navigation hidden -->
+<ion-modal-view class="modal-fullscreen">
+    <ion-header-bar class="bar-positive">
+        <h1 class="title">{{ action }}</h1>
+        <div class="buttons">
+            <button ng-click="closeModal()" class="button button-icon icon ion-close-round"></button>
+        </div>
+    </ion-header-bar>
+    <ion-content>
+        <div class="row padding">
+            <div class="col padding">
+                <label class="item item-input item-floating-label"> <span class="input-label positive">{{'modal.agenda.ObserverName.Label' | translate}}</span>
+                    <input type="text" ng-model="lesson.observerName" placeholder="{{'modal.agenda.ObserverName.Placeholder' | translate}}">
+                </label>
+            </div>
+        </div>
+        <div class="row padding">
+            <div class="col padding">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label positive">{{'modal.agenda.Date.Label' | translate}}</span>
+                    <input id='date' type="date" value='2009-11-11' ng-model="lesson.date">
+                </label>
+            </div>
+            <div class="col padding">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label positive">{{'modal.agenda.StartTime.Label' | translate}}</span>
+                    <input type="time" ng-model="lesson.startTime">
+                </label>
+            </div>
+            <div class="col padding">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label positive">{{'modal.agenda.EndTime.Label' | translate}}</span>
+                    <input type="time" ng-model="lesson.endTime">
+                </label>
+            </div>
+        </div>
+        <div class="row padding">
+            <div class="col padding">
+                <label class="item item-input item-floating-label"> <span class="input-label positive">{{'modal.agenda.School.Label' | translate}}</span>
+                    <input type="text" ng-model="lesson.school" placeholder="{{'modal.agenda.School.Placeholder' | translate}}">
+                </label>
+            </div>
+            <div class="col padding">
+                <label class="item item-input item-floating-label"> <span class="input-label positive">{{'modal.agenda.Location.Label' | translate}}</span>
+                    <input type="text" ng-model="lesson.location" placeholder="{{'modal.agenda.Location.Placeholder' | translate}}">
+                </label>
+            </div>
+        </div>
+        <div class="row padding">
+            <div class="col padding">
+                <label class="item item-input item-floating-label"> <span class="input-label positive">{{'modal.agenda.ClassName.Label' | translate}}</span>
+                    <input type="text" ng-model="lesson.className" placeholder="{{'modal.agenda.ClassName.Placeholder' | translate}}">
+                </label>
+            </div>
+            <div class="col padding">
+                <label class="item item-input item-floating-label"> <span class="input-label positive">{{'modal.agenda.Domain.Label' | translate}}</span>
+                    <input type="text" ng-model="lesson.domain" placeholder="{{'modal.agenda.Domain.Placeholder' | translate}}">
+                </label>
+            </div>
+            <div class="col padding">
+                <label class="item item-input item-select">
+                    <div class="input-label positive">
+                        {{'modal.agenda.Grade.Label' | translate}}
+                    </div>
+                    <select ng-model="lesson.grade">
+                        <option selected></option>
+                        <option>k</option>
+                        <option>0</option>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                        <option>6</option>
+                        <option>7</option>
+                        <option>8</option>
+                        <option>9</option>
+                        <option>10</option>
+                        <option>11</option>
+                        <option>12</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+        <div class="row padding">
+            <div class="col padding">
+                <label class="item item-input item-floating-label"> <span class="input-label positive">{{'modal.agenda.TeacherName.Label' | translate}}</span>
+                    <input type="text" ng-model="lesson.teacherName" placeholder="{{'modal.agenda.TeacherName.Placeholder' | translate}}">
+                </label>
+            </div>
+            <div class="col padding">
+                <label class="item item-input item-floating-label"> <span class="input-label positive">{{'modal.agenda.StudentCount.Label' | translate}}</span>
+                    <input type="text" ng-model="lesson.studentCount" placeholder="{{'modal.agenda.StudentCount.Placeholder' | translate}}">
+                </label>
+                </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-20">
+                <div class="padding">
+                    <button ng-click="clearForm()" class="button button-block button-assertive">{{'modal.agenda.ClearForm.Button' | translate}}</button>
+                </div>
+            </div>
+            <div class="col col-80">
+                <div class="padding">
+                    <button ng-click="saveLesson()" class="button button-block button-positive">{{'modal.agenda.SaveLesson.Button' | translate}}</button>
+                </div>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-modal-view>

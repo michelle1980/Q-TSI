@@ -1,0 +1,35 @@
+<!--Q-TSI - App -->
+<!--AGENDA VIEW -->
+<ion-view view-title="{{'view.agenda.Title' | translate}}" cache-view="false">
+    <ion-content class=" padding extra-padding">
+        <div class="row row-border padding">
+            <div class="col col-15 padding positive">{{'view.agenda.column.ClassName' | translate}}</div>
+            <div class="col col-15 padding positive">{{'view.agenda.column.Grade' | translate}}</div>
+            <div class="col col-15 padding positive">{{'view.agenda.column.Date' | translate}}</div>
+            <div class="col col-15 padding positive">{{'view.agenda.column.StartTime' | translate}}</div>
+            <div class="col col-15 padding positive">{{'view.agenda.column.EndTime' | translate}}</div>
+            <div class="col col-25 padding positive"></div>
+        </div>
+        <ul ng-repeat="lesson in lessons track by $index" item="item">
+            <div class="row row-border padding">
+                <div class="col col-15 padding">{{lesson.className}}</div>
+                <div class="col col-15 padding">{{lesson.grade}}</div>
+                <div class="col col-15 padding">{{lesson.date | date: 'dd/MM/yyyy'}}</div>
+                <div class="col col-15 padding">{{lesson.startTime | date: 'HH:mm'}}</div>
+                <div class="col col-15 padding">{{lesson.endTime | date: 'HH:mm'}}</div>
+                <div class="col col-25 padding" style="text-align: right">
+                    <button class="button ion-edit button-positive" ng-click="showEditLessonModal(lesson)"></button>
+                    <button class="button ion-arrow-right-a button-positive" ui-sref="boardposition({id: lesson.$loki})"></button>
+                    <button class="button ion-ios-email-outline button-positive" ng-click="sendEmail(lesson)"></button>
+                    <button class="button ion-ios-trash-outline button-assertive" ng-click="deleteLesson(lesson, lesson.$loki)" style="margin-left: 20px"></button>
+                </div>
+            </div>
+        </ul>
+
+        <div class="buttons">
+            <button type="button" class="button button-block button-outline button-positive" ng-click="showAddLessonModal()">
+                {{'view.agenda.button.Add' | translate}}
+            </button>
+        </div>
+    </ion-content>
+</ion-view>

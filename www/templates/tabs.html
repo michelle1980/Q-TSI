@@ -1,0 +1,20 @@
+<!--Q-TSI - App -->
+<!--Declares ionTabs component to wrap all tabs and gives it a class to modify title and icon display. Declared for active and inactive states -->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive " ng-class="{'tabs-item-hide': $root.hideTabs}">
+
+    <!-- Agenda Tab -->
+    <ion-tab title="{{'tabs.AgendaTab' | translate}}" icon-off="ion-ios-calendar-outline" icon-on="ion-ios-calendar" href="#/tab/agenda">
+        <ion-nav-view name="tab-agenda"></ion-nav-view>
+    </ion-tab>
+
+    <!-- About Tab -->
+    <ion-tab title="{{'tabs.AboutTab' | translate}}" icon-off="ion-ios-information-outline" icon-on="ion-information-circled" href="#/tab/about">
+        <ion-nav-view name="tab-about"></ion-nav-view>
+    </ion-tab>
+
+    <!-- Settings Tab -->
+    <ion-tab title="{{'tabs.SettingsTab' | translate}}" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/settings">
+        <ion-nav-view name="tab-settings"></ion-nav-view>
+    </ion-tab>
+
+</ion-tabs>
